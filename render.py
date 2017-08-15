@@ -7,8 +7,6 @@ Another way to render a full web page is using module selenium. However, you nee
 '''
 
 
-import bs4 as bs
-url = 'https://www.fxstreet.com/economic-calendar'
 def render(source_html):
     """Fully render HTML, JavaScript and all."""
 
@@ -39,6 +37,7 @@ def render(source_html):
   
 if __name__ == "__main__":
   import requests
+  url = 'http://msfe.illinois.edu/current-students/index.aspx'
   sample_html = requests.get(url).text
   print(render(sample_html))
   
