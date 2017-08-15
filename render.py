@@ -7,7 +7,7 @@ Another way to render a full web page is using module selenium. However, you nee
 '''
 
 
-def render(source_html):
+def qt_render(source_html):
     """Fully render HTML, JavaScript and all."""
 
     import sys
@@ -35,6 +35,26 @@ def render(source_html):
 
     return Render(source_html).html
   
+
+    
+'''
+for windows 10, download chromedriver from this webpage:
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+and put it under C:/Windows/
+'''
+def selenium_render(source_html):
+    from selenium import webdriver
+    import time
+
+    driver = webdriver.Chrome('C:/Windows/chromedriver.exe')  # Optional argument, if not specified will search path.
+    driver.get(url);
+    time.sleep(5) # Let the user actually see something!
+    htmlSource = driver.page_source
+    driver.quit()
+    return htmlSource
+    
+
+    
 if __name__ == "__main__":
   import requests
   url = 'http://msfe.illinois.edu/current-students/index.aspx'
