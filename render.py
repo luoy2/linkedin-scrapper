@@ -47,8 +47,8 @@ def selenium_render(source_html):
     import time
 
     driver = webdriver.Chrome('C:/Windows/chromedriver.exe')  # Optional argument, if not specified will search path.
-    driver.get(url);
-    time.sleep(5) # Let the user actually see something!
+    driver.get(source_html);
+    time.sleep(10) # Let the user actually see something!
     htmlSource = driver.page_source
     driver.quit()
     return htmlSource
